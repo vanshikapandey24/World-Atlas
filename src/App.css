@@ -601,3 +601,14 @@ contact us Page ends here
   justify-content: center;
   align-items: center;
 }
+.wiki-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.wiki-link:hover {
+  text-decoration: underline;
+}

@@ -12,18 +12,14 @@ export const CountryDetails = () => {
   useEffect(() => {
     startTransition(async () => {
       const res = await getCountryIndData(params.id);
-      console.log(res);
       if (res.status === 200) {
         setCountry(res.data[0]);
       }
-
-      console.log(Object.keys(res.data[0].name.nativeName));
     });
   }, []);
 
   if (isPending) return <Loader />;
 
-  console.log(params);
   return (
     <section className="card country-details-card container">
       <div className="container-card bg-white-box">
@@ -60,7 +56,6 @@ export const CountryDetails = () => {
                   <span className="card-description"> Capital:</span>
                   {country.capital}
                 </p>
-
                 <p>
                   <span className="card-description">Top Level Domain:</span>
                   {country.tld[0]}
@@ -76,6 +71,21 @@ export const CountryDetails = () => {
                   {Object.keys(country.languages)
                     .map((key) => country.languages[key])
                     .join(", ")}
+                </p>
+
+                {/* ✅ Wikipedia Link */}
+                <p>
+                  <span className="card-description">Wikipedia:</span>{" "}
+                  <a
+                    href={`https://en.wikipedia.org/wiki/${encodeURIComponent(
+                      country.name.common
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="wiki-link"
+                  >
+                    View more about {country.name.common}
+                  </a>
                 </p>
               </div>
             </div>
