@@ -35,9 +35,7 @@ export const Footers = () => {
             <div className="copyright-text">
               <p>
                 Copyright &copy; 2024, All Right Reserved
-                <NavLink to="https://www.linkedin.com/in/vanshika-pandey-48a3b52a6" target="_blank">
-                  Vanshika Pandey
-                </NavLink>
+                
               </p>
             </div>
 
